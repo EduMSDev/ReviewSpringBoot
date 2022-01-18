@@ -8,9 +8,13 @@
     http://www.springframework.org/schema/context 
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
+<!-- Creation of the dependency injection -->
+<bean id="miInforme" class="com.review.DI.Informe">
 
-<bean id="miEmpleado" class="com.review.IoC.Empleados.DirectorEmpleado">
+</bean>
 
+<bean id="miEmpleado" class="com.review.IoC.DirectorEmpleado">
+	<constructor-arg ref="miInforme"> </constructor-arg>
 </bean>
 
 

@@ -7,12 +7,9 @@ public class UsoEmpleado {
 		public static void main(String[] args) {
 			
 			/*Without the use of beans, it would be necessary to modify 
-			 the code every time you want to change who executes the task.*/
+			 the code every time you want to change who executes the task.
 			Empleados empleado1 = new JefeEmpleado();
-			Empleados empleado2 = new SecretrioEmpleado();
-			Empleados empleado3 = new DirectorEmpleado();
-			//Object use
-			System.out.println(empleado1.getTareas());
+			System.out.println(empleado1.getTareas());*/
 			
 			
 			/*With the use of beans, you only need to modify
@@ -20,6 +17,8 @@ public class UsoEmpleado {
 			ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
 			Empleados Juan = context.getBean("miEmpleado", Empleados.class);
 			System.out.println(Juan.getTareas());
+			
+			System.out.println(Juan.getInformes());
 			context.close();
 			
 			/*To change who executes the task, go to the applicattionContext.xml file and change the 
