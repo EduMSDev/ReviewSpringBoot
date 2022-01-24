@@ -9,22 +9,14 @@
     http://www.springframework.org/schema/context/spring-context-3.1.xsd
 ">
 
-<context:property-placeholder location="classpath:datosEmpresa.propiedades"/>
-
 <!-- Creation of the dependency injection -->
 <bean id="miInforme" class="com.review.DI.Informe">
+
 </bean>
 
-<bean id="miEmpleado" class="com.review.IoC.DirectorEmpleado">
-	<constructor-arg ref="miInforme"> </constructor-arg>
-	<property name="email" value="${email}" > </property>
-	<property name="nombreEmpresa" value="${nombreEmpresa}"> </property>
-</bean>
-
-<bean id="miSecretarioEmpleado"  class="com.review.IoC.SecretarioEmpleado">
+<bean id="miSecretarioEmpleado"  class="com.review.IoC.SecretarioEmpleado" scope="prototype">
 	<property name="informeNuevo" ref="miInforme"> </property>
-	<property name="email" value="secretaria@test.es" > </property>
-	<property name="nombreEmpresa" value="Test"> </property>
+
 </bean>
 
 </beans>
