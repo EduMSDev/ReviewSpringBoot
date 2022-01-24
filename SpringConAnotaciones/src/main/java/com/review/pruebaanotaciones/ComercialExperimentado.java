@@ -2,17 +2,23 @@ package com.review.pruebaanotaciones;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //This annotation serves to create beans
 /*You can not use an identifier, and spring will search for it by the class name, 
  the first letter in lower case.*/
 @Component
+
+//It changes the way the class works when creating beans. 
+@Scope("prototype")
 public class ComercialExperimentado implements Empleados {
-	//En esta clase se pueden ver disintas maneras de usar la anotacion @Autowired
+	//In this class you can see different ways to use the @Autowired annotation.
 	
 	//You can create a dependency injector with a field
 	@Autowired
+	/*If there is more than one dependency to inject, 
+	 it allows to identify which one we want to use through the name*/
 	@Qualifier("informeFinancieroTrim3")
 	private CreacionInformefinanciero nuevoInforme;
 	
