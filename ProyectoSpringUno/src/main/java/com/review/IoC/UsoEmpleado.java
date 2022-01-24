@@ -20,9 +20,14 @@ public class UsoEmpleado {
 			System.out.println(Juan.getTareas());
 			
 			System.out.println(Juan.getInformes());*/
-			Empleados maria = context.getBean("miSecretarioEmpleado", Empleados.class);
+			
+			
+			
+			SecretarioEmpleado maria = context.getBean("miSecretarioEmpleado", SecretarioEmpleado.class);
 			System.out.println(maria.getTareas());
 			System.out.println(maria.getInformes());
+			System.out.println(maria.getEmail());
+			System.out.println(maria.getNombreEmpresa());
 			
 			context.close();
 			

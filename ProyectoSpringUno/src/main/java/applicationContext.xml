@@ -15,11 +15,14 @@
 
 <bean id="miEmpleado" class="com.review.IoC.DirectorEmpleado">
 	<constructor-arg ref="miInforme"> </constructor-arg>
+	<property name="email" value="director@test.es" > </property>
+	<property name="nombreEmpresa" value="Test"> </property>
 </bean>
 
 <bean id="miSecretarioEmpleado"  class="com.review.IoC.SecretarioEmpleado">
 	<property name="informeNuevo" ref="miInforme"> </property>
-
+	<property name="email" value="secretaria@test.es" > </property>
+	<property name="nombreEmpresa" value="Test"> </property>
 </bean>
 
 </beans>
