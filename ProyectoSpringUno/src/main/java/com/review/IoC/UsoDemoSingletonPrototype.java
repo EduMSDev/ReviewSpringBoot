@@ -19,5 +19,7 @@ public class UsoDemoSingletonPrototype {
 		}else {
 			System.out.println("No son el mismo objeto");
 		}
+		
+		context.close();
 	}
 }
