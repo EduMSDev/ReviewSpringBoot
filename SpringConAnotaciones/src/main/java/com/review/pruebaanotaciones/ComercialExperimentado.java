@@ -1,6 +1,7 @@
 package com.review.pruebaanotaciones;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //This annotation serves to create beans
@@ -12,6 +13,7 @@ public class ComercialExperimentado implements Empleados {
 	
 	//You can create a dependency injector with a field
 	@Autowired
+	@Qualifier("informeFinancieroTrim3")
 	private CreacionInformefinanciero nuevoInforme;
 	
 	/*
