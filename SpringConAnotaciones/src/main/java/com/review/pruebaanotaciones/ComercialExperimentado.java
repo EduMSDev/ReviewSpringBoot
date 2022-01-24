@@ -1,5 +1,6 @@
 package com.review.pruebaanotaciones;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 //This annotation serves to create beans
@@ -7,17 +8,30 @@ import org.springframework.stereotype.Component;
  the first letter in lower case.*/
 @Component
 public class ComercialExperimentado implements Empleados {
+	//En esta clase se pueden ver disintas maneras de usar la anotacion @Autowired
 	
+	//You can create a dependency injector with a field
+	@Autowired
 	private CreacionInformefinanciero nuevoInforme;
 	
+	/*
+	Dependency injections can be created with a constructor.
+	@Autowired
 	public ComercialExperimentado(CreacionInformefinanciero nuevoInforme) {
 		this.nuevoInforme=nuevoInforme;
-	} 
-
+	} */
+	
 	@Override
 	public String getTareas() {
 		return "Vender";
 	}
+	
+	/*
+	Injections can be created with a method
+	@Autowired
+	public void setNuevoInforme(CreacionInformefinanciero nuevoInforme) {
+		this.nuevoInforme = nuevoInforme;
+	}*/
 
 	@Override
 	public String getInformes() {
