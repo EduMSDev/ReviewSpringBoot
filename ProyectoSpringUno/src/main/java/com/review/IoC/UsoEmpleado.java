@@ -15,10 +15,15 @@ public class UsoEmpleado {
 			/*With the use of beans, you only need to modify
 			 the xml file if you want to modify who executes the task.*/
 			ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
-			Empleados Juan = context.getBean("miEmpleado", Empleados.class);
+			
+			/*Empleados Juan = context.getBean("miEmpleado", Empleados.class);
 			System.out.println(Juan.getTareas());
 			
-			System.out.println(Juan.getInformes());
+			System.out.println(Juan.getInformes());*/
+			Empleados maria = context.getBean("miSecretarioEmpleado", Empleados.class);
+			System.out.println(maria.getTareas());
+			System.out.println(maria.getInformes());
+			
 			context.close();
 			
 			/*To change who executes the task, go to the applicattionContext.xml file and change the 
