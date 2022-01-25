@@ -9,5 +9,11 @@
 <body>
 
 Hola ${param.nombreAlumno }
+
+<p><br>
+
+<h2>Atencion a todos</h2>
+
+${mensajeClaro}
 </body>
 </html>
