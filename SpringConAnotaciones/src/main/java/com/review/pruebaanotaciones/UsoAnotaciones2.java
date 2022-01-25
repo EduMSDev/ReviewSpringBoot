@@ -19,11 +19,16 @@ public class UsoAnotaciones2 {
 		}
 		context.close();*/
 		//How to use a bean creation without xml
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
+		/*AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
 		Empleados empleado = context.getBean("directorFinanciero",Empleados.class);
 		System.out.println(empleado.getTareas());
-		System.out.println(empleado.getInformes());
+		System.out.println(empleado.getInformes());*/
 		
+		/*Using the PropertySources and Value annotations*/
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
+		DirectorFinanciero directorFinanciero= context.getBean("directorFinanciero",DirectorFinanciero.class);
+		System.out.println(directorFinanciero.getEmail());
+		System.out.println(directorFinanciero.getNombreEmpresa());
 	}
 
 }
