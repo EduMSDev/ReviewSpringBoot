@@ -8,7 +8,7 @@ public class UsoAnotaciones2 {
 	public static void main(String[] args) {
 		
 		//ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
-		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
+		/*AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
 		Empleados antonio = context.getBean("comercialExperimentado",Empleados.class);
 		Empleados lucia = context.getBean("comercialExperimentado",Empleados.class);
 		
@@ -17,7 +17,13 @@ public class UsoAnotaciones2 {
 		}else {
 			System.out.println("No apuntan al mismo lugar en memoria.");
 		}
-		context.close();
+		context.close();*/
+		//How to use a bean creation without xml
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(EmpleadosConfig.class);
+		Empleados empleado = context.getBean("directorFinanciero",Empleados.class);
+		System.out.println(empleado.getTareas());
+		System.out.println(empleado.getInformes());
+		
 	}
 
 }
