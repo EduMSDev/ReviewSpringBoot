@@ -11,5 +11,7 @@
 
 
 <a href="principal/muestraFormulario">Ir al formulario</a>
+
+<a href="alumno/muestraFormulario">Registro Formulario</a>
 </body>
 </html>

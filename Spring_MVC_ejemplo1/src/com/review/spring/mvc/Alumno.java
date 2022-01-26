@@ -2,15 +2,15 @@ package com.review.spring.mvc;
 
 public class Alumno {
 
-	private String alumno;
+	private String nombre;
 	
 	private String apellido;
 	
-	public String getAlumno() {
-		return alumno;
+	public String getNombre() {
+		return nombre;
 	}
-	public void setAlumno(String alumno) {
-		this.alumno = alumno;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	public String getApellido() {
 		return apellido;
