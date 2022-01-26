@@ -2,6 +2,8 @@ package com.review.conexionHibernate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
@@ -24,6 +26,9 @@ public class Clientes {
 	}
 
 	@Id
+	
+	//Allows to work with database ids	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	//Used to relate a field name of a database table to a field of the class
 	@Column(name="id")
 	private int Id;
@@ -59,6 +64,14 @@ public class Clientes {
 
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
+	}
+
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
 	}
 
 	@Override

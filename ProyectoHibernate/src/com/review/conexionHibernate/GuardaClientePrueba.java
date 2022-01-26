@@ -15,11 +15,18 @@ public class GuardaClientePrueba {
 		Session miSession = miFactory.openSession();
 		
 		try {
-			Clientes cliente = new Clientes("juan", "diaz","calle la roza");
+			Clientes cliente = new Clientes("Sandra", "Delgado","calle la morena");
 			miSession.beginTransaction();
 			miSession.save(cliente);
 			miSession.getTransaction().commit();
 			System.out.println("Registro insertado correctamente.");
+			
+			miSession.beginTransaction();
+			System.out.println("Lectura del registro con id: " + cliente.getId());
+			Clientes clienteInsertado = miSession.get(Clientes.class,cliente.getId());
+			
+			System.out.println("Registro: "+ clienteInsertado);
+			
 		}catch (Exception e) {
 			
 		}finally {
