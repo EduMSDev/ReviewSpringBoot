@@ -5,7 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
+//Used to make the class a database entity
+
 @Entity
+//Used to relate a table name to the class
 @Table(name = "clientes")
 public class Clientes {
 	
@@ -21,16 +24,17 @@ public class Clientes {
 	}
 
 	@Id
+	//Used to relate a field name of a database table to a field of the class
 	@Column(name="id")
 	private int Id;
 	
-	@Column(name="id")
+	@Column(name="Nombre")
 	private String nombre;
 	
-	@Column(name="id")
+	@Column(name="Apellido")
 	private String apellidos;
 	
-	@Column(name="id")
+	@Column(name="Direccion")
 	private String direccion;
 
 	public String getNombre() {
