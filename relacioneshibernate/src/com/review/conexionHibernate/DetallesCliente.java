@@ -47,7 +47,7 @@ public class DetallesCliente {
 	@Column(name="comentarios")
 	private String comentarios;
 	
-	//This makes the relationship bidirectional.
+	//This makes the relationship bidirectional.	
 	@OneToOne(mappedBy = "detallesCliente", cascade = CascadeType.ALL)
 	private Cliente elcliente;
 	
