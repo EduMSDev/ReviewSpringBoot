@@ -1,5 +1,6 @@
 package com.review.conexionHibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -87,6 +88,17 @@ public class Cliente {
 	public void setDetallesCliente(DetallesCliente detallesCliente) {
 		this.detallesCliente = detallesCliente;
 	}
+	
+	//The order and the customer are added	
+	public void addPedidos(Pedidos elPedidos) {
+		if (pedidos == null) {
+			
+			pedidos = new ArrayList<>();
+		}
+		
+		pedidos.add(elPedidos);
+		elPedidos.setCliente(this);
+	}
 
 	
 	//Allows you to indicate that you have a one-to-one relationship in database
@@ -102,7 +114,7 @@ public class Cliente {
 				+ "]";
 	}
 	
-	@OneToMany(mappedBy ="cliente")
+	@OneToMany(mappedBy ="cliente",cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	private List<Pedidos> pedidos;
 	
 	
