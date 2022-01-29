@@ -1,5 +1,6 @@
 package com.review.conexionHibernate;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,22 +8,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 
-//Used to make the class a database entity
 
+//Used to make the class a database entity
 @Entity
 //Used to relate a table name to the class
-@Table(name = "clientes")
+@Table(name = "detalles_cliente")
 public class DetallesCliente {
 	
-	public DetallesCliente(String nombre, String apellidos, String direccion) {
-		super();
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.direccion = direccion;
-	}
+	
 
-	public DetallesCliente() {
+	public DetallesCliente(String web, String telefono, String comentarios) {
 		super();
+		this.web = web;
+		this.telefono= telefono;
+		this.comentarios = comentarios;
 	}
 
 	@Id
@@ -32,39 +31,16 @@ public class DetallesCliente {
 	@Column(name="id")
 	private int Id;
 	
-	@Column(name="nombre")
-	private String nombre;
+	@Column(name="web")
+	private String web;
 	
-	@Column(name="apellido")
-	private String apellidos;
+	@Column(name="telefono")
+	private String telefono;
 	
-	@Column(name="direccion")
-	private String direccion;
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellidos() {
-		return apellidos;
-	}
-
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
-	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
+	@Column(name="comentarios")
+	private String comentarios;
+		
+	
 	public int getId() {
 		return Id;
 	}
@@ -73,11 +49,28 @@ public class DetallesCliente {
 		Id = id;
 	}
 
-	@Override
-	public String toString() {
-		return "Clientes [Id=" + Id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", direccion=" + direccion
-				+ "]";
+	public String getWeb() {
+		return web;
 	}
-	
-	
+
+	public void setWeb(String web) {
+		this.web = web;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getComentarios() {
+		return comentarios;
+	}
+
+	public void setComentarios(String comentarios) {
+		this.comentarios = comentarios;
+	}
+
 }
