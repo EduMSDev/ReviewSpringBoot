@@ -1,12 +1,15 @@
 package com.review.conexionHibernate;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
 
 
 //Used to make the class a database entity
@@ -43,8 +46,18 @@ public class DetallesCliente {
 	
 	@Column(name="comentarios")
 	private String comentarios;
-		
 	
+	@OneToOne(mappedBy = "detallesCliente", cascade = CascadeType.ALL)
+	private Cliente elcliente;
+	
+	public Cliente getElcliente() {
+		return elcliente;
+	}
+
+	public void setElcliente(Cliente elcliente) {
+		this.elcliente = elcliente;
+	}
+
 	public int getId() {
 		return Id;
 	}
@@ -76,5 +89,13 @@ public class DetallesCliente {
 	public void setComentarios(String comentarios) {
 		this.comentarios = comentarios;
 	}
+
+	@Override
+	public String toString() {
+		return "DetallesCliente [Id=" + Id + ", web=" + web + ", telefono=" + telefono + ", comentarios=" + comentarios
+				+ "]";
+	}
+	
+	
 
 }
