@@ -115,7 +115,7 @@ public class Cliente {
 				+ "]";
 	}
 	
-	@OneToMany(fetch = FetchType.LAZY,mappedBy ="cliente",cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
+	@OneToMany(fetch = FetchType.EAGER,mappedBy ="cliente",cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH,CascadeType.REFRESH})
 	private List<Pedidos> pedidos;
 
 	public List<Pedidos> getPedidos() {

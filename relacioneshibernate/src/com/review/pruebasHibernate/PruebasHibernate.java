@@ -11,7 +11,7 @@ public class PruebasHibernate {
 		
 		String jdbcl = "jdbc:mysql://localhost:3306/proyectohibernate?useSSL=false";
 		String usuario= "root";
-		String password ="Perdedor65";
+		String password ="wtasrt";
 		
 		try {
 		
