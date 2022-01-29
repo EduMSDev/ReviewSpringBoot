@@ -1,6 +1,7 @@
 package com.review.conexionHibernate;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -20,7 +21,7 @@ public class Pedidos {
 		super();
 	}
 
-	public Pedidos(int id, Date fecha, String formaPago) {
+	public Pedidos(int id, GregorianCalendar fecha, String formaPago) {
 		super();
 		this.id = id;
 		this.fecha = fecha;
@@ -28,7 +29,7 @@ public class Pedidos {
 	}
 	
 
-	public Pedidos(Date fecha) {
+	public Pedidos(GregorianCalendar fecha) {
 		super();
 		this.fecha = fecha;
 	}
@@ -39,7 +40,7 @@ public class Pedidos {
 	private int id;
 	
 	@Column(name="fecha")
-	private Date fecha;
+	private GregorianCalendar fecha;
 	
 	@Column(name="forma_pago")
 	private String formaPago;
@@ -58,11 +59,11 @@ public class Pedidos {
 		this.id = id;
 	}
 
-	public Date getFecha() {
+	public GregorianCalendar getFecha() {
 		return fecha;
 	}
 
-	public void setFecha(Date fecha) {
+	public void setFecha(GregorianCalendar fecha) {
 		this.fecha = fecha;
 	}
 

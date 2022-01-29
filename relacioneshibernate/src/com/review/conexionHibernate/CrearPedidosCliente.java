@@ -1,6 +1,7 @@
 package com.review.conexionHibernate;
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,11 +21,11 @@ public class CrearPedidosCliente {
 			
 			miSession.beginTransaction();
 			
-			Cliente elCliente = miSession.get(Cliente.class,1);
+			Cliente elCliente = miSession.get(Cliente.class,3);
 			
-			Pedidos pedido1 =new Pedidos(new Date(120,6,4));
-			Pedidos pedido2 =new Pedidos(new Date(120,5,30));
-			Pedidos pedido3 =new Pedidos(new Date(120,7,2));
+			Pedidos pedido1 =new Pedidos(new GregorianCalendar(2020,7,5));
+			Pedidos pedido2 =new Pedidos(new GregorianCalendar(2019,6,5));
+			Pedidos pedido3 =new Pedidos(new GregorianCalendar(2021,7,5));
 			
 			elCliente.addPedidos(pedido1);
 			elCliente.addPedidos(pedido2);
