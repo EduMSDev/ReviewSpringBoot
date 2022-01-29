@@ -22,10 +22,13 @@ public class ObtenerCliente {
 			System.out.println(detallesCliente);
 			System.out.println(detallesCliente.getElcliente());
 			
-			miSession.close();
+			System.out.println("Ahora borramos en cascada");
+			miSession.delete(detallesCliente);
+			
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
+			miSession.close();
 			miFactory.close();
 		}
 	}
