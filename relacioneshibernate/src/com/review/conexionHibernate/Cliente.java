@@ -1,5 +1,7 @@
 package com.review.conexionHibernate;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 //Used to make the class a database entity
@@ -97,6 +101,9 @@ public class Cliente {
 		return "Clientes [Id=" + Id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", direccion=" + direccion
 				+ "]";
 	}
+	
+	@OneToMany(mappedBy ="cliente")
+	private List<Pedidos> pedidos;
 	
 	
 }
