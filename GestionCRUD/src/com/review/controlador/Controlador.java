@@ -10,7 +10,6 @@ public class Controlador {
 
 	@RequestMapping("/lista")
 	public String listaClientes(Model modelo) {
-		return "lista-clientes";
-		
+		return "lista-cliente";
 	}
 }
