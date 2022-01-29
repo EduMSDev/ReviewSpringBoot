@@ -17,6 +17,10 @@ public class DetallesCliente {
 	
 	
 
+	public DetallesCliente() {
+		super();
+	}
+
 	public DetallesCliente(String web, String telefono, String comentarios) {
 		super();
 		this.web = web;
