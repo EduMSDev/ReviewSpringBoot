@@ -12,10 +12,10 @@ import javax.persistence.Table;
 public class Cliente {
 
 	
-	public Cliente(String nombre, String apellidos, String email) {
+	public Cliente(String nombre, String apellido, String email) {
 		super();
 		this.nombre = nombre;
-		this.apellidos = apellidos;
+		this.apellido = apellido;
 		this.email = email;
 	}
 
@@ -31,7 +31,7 @@ public class Cliente {
 	private String nombre;
 	
 	@Column
-	private String apellidos;
+	private String apellido;
 	
 	@Column
 	private String email;
@@ -52,12 +52,12 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
-	public String getApellidos() {
-		return apellidos;
+	public String getApellido() {
+		return apellido;
 	}
 
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
 
 	public String getEmail() {
@@ -70,7 +70,7 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Cliente [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", email=" + email + "]";
+		return "Cliente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + "]";
 	}
 	
 }
