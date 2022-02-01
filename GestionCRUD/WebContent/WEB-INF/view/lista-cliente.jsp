@@ -26,5 +26,7 @@
 	</c:forEach> 
 
 </table>
+<br>
+<input type="button" value="Agregar Cliente" onclick="window.location.href='muestraFormularioAgregar';return false;">
 </body>
 </html>
