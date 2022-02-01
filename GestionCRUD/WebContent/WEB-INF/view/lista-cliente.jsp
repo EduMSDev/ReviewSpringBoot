@@ -31,6 +31,7 @@
 			<td><a href="${linkActualizar}"><input type="button" value="Modificar"></a></td>
 		</tr>
 	</c:forEach> 
+	
 
 </table>
 <br>

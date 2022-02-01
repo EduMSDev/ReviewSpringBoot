@@ -10,6 +10,7 @@
 <body>
 Este es el formulario de las narices.
 <form:form action="insertarCliente" modelAttribute="cliente" method="POST">
+<form:hidden path="id"/>
 	<table>
 		<tr>
 			<td>Nombre: </td>
