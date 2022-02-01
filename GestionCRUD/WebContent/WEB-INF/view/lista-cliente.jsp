@@ -20,7 +20,12 @@
 	</tr>
 	
 	<c:forEach var="clientTemp" items="${clientes }">
+		
 		<c:url var="linkActualizar" value="/cliente/muestraFormularioActualizar">
+			<c:param name="clienteId" value="${clientTemp.id}"></c:param>
+		</c:url>
+		
+		<c:url var="linkEliminar" value="/cliente/eliminar">
 			<c:param name="clienteId" value="${clientTemp.id}"></c:param>
 		</c:url>
 		
@@ -29,6 +34,8 @@
 			<td>${clientTemp.apellido}</td>
 			<td>${clientTemp.email}</td>
 			<td><a href="${linkActualizar}"><input type="button" value="Modificar"></a></td>
+			<td><a href="${linkEliminar}"><input type="button" value="Eliminar"
+			onclick="if(!(confirm('Vas a elimar el registro Quieres hacerlo?'))) return false"></a></td>
 		</tr>
 	</c:forEach> 
 	

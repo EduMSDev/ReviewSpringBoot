@@ -48,6 +48,13 @@ public class Controlador {
 		return "formularioCliente";
 	}
 	
+	@GetMapping("/eliminar")
+	public String eliminarCliente(@RequestParam("clienteId") int Id) {
+		clienteDAO.eliminarCliente(Id);
+		
+		return "redirect:/cliente/lista";
+	}
+	
 	@Autowired
 	private ClienteDAO clienteDAO;
 }

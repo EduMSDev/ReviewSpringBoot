@@ -40,6 +40,16 @@ public class ClienteDAOClase implements ClienteDAO{
 		Session session = sessionFactory.getCurrentSession();
 		return session.get(Cliente.class,id);
 	}
+
+	@Override
+	@Transactional
+	public void eliminarCliente(int id) {
+		Session session=sessionFactory.getCurrentSession();
+		Query consulta =session.createQuery("delete from Cliente where id=:IdDelCliente");
+		
+		consulta.setParameter("IdDelCliente", id);
+		consulta.executeUpdate();
+	}
 	
 
 }

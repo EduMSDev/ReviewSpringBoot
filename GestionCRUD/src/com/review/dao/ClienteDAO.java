@@ -11,5 +11,7 @@ public interface ClienteDAO {
 	public void insertarCliente(Cliente cliente);
 	
 	public Cliente getCliente(int id);
+	
+	public void eliminarCliente(int id);
 
 }
